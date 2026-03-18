@@ -63,7 +63,7 @@ COLOCAR A TOPOLOGIA
 * Conectar corretamente (cabos)
 * Entender hierarquia de rede
 
-## 4.4 Configuração manual de IP
+### 4.4 Configuração manual de IP
 
 * Configurar interfaces dos roteadores digitando o IP e máscara;
 * Ligar cada interface;
@@ -72,55 +72,7 @@ COLOCAR A TOPOLOGIA
 * Definir gateway nos PCs.
 
 
-## 7. Impressora compartilhada
-
-### 7.1 Desafio prático:
-
-* Colocar impressora em uma subrede
-* Garantir acesso de todas as outras
-
-### Teste:
-
-* Ping
-* Envio de “impressão”
-
-
-## 8. TCP vs UDP (exploração prática)
-
-### 8.1 Simular envios de pacotes
-
-* Simular envio de pacote
-* Observar diferença no modo simulation
-
-| TCP         | UDP             |
-| ----------- | --------------- |
-| Confiável   | Rápido          |
-| Confirmação | Sem confirmação |
-| Mais lento  | Mais leve       |
-
-
-
-## 9. Testes finais (validação)
-
-Checklist do aluno:
-
-* ✅ PCs se comunicam dentro da subrede
-* ✅ PCs acessam outras subredes
-* ✅ Impressora acessível por todos
-* ✅ Ping entre todos os dispositivos
-
-
-
-## 10. Conclusões
-
-Perguntas finais:
-
-* O que aconteceria sem subredes?
-* Qual o papel do roteador?
-* TCP ou UDP: quando usar cada um?
-
-
-## Gabarito
+## 5. Configurações Gerais
 
 ### **1. Preparação do Cenário (Topologia)**
 Abra o Packet Tracer e adicione os seguintes dispositivos:
@@ -190,7 +142,7 @@ No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interf
     * Interface `G0/1`: `192.168.0.66` (Ligada ao outro roteador).
     * Interface `G0/0`: `192.168.0.190` (Ligada à LAN direita).
 
-#### **3. Identificação de Redes Conectadas e Não Conectadas**
+### **6. Identificação de Redes Conectadas e Não Conectadas**
 Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
 
 * **Roteador Aluno (Esquerda):**
@@ -205,7 +157,7 @@ O segredo aqui é o conceito de **Next Hop** (Próximo Salto): o endereço de IP
 
 ---
 
-#### **6. Configurando o Roteador Aluno (Esquerda)**
+### **7. Configurando o Roteador Aluno (Esquerda)**
 O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede do PC da direita (`192.168.0.128`).
 1.  Clique no Roteador **Aluno**.
 2.  Vá na aba **Config** > **Static**.
@@ -216,7 +168,7 @@ O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede
 4.  Clique em **Add**.
 
 
-#### **7. Configurando o Roteador Professor (Direita)**
+### **8. Configurando o Roteador Professor (Direita)**
 Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda (`192.168.0.0`).
 1.  Clique no Roteador **Professor**.
 2.  Vá em **Config** > **Static**.
@@ -226,7 +178,7 @@ Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda 
     * **Next Hop:** `192.168.0.65` (O IP da interface do Roteador Aluno que está virada para o Professor).
 4.  Clique em **Add**.
 
-#### **8. Teste de Conectividade (Ping)**
+### **9. Teste de Conectividade (Ping)**
 Para verificar se tudo deu certo:
 1.  Mude para o modo **Simulation** (canto inferior direito).
 2.  Clique no filtro **Edit Filters** e deixe marcado apenas o protocolo **ICMP**.
@@ -241,5 +193,45 @@ Para verificar se tudo deu certo:
 
 ### **Dica de Diagnóstico**
 É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
+
+
+## 10. Impressora compartilhada
+
+### 10.1 Desafio prático:
+
+* Colocar impressora em uma subrede
+* Garantir acesso de todas as outras
+
+### Teste:
+
+* Ping
+* Envio de “impressão”
+
+
+## 11. TCP vs UDP (exploração prática)
+
+### 11.1 Simular envios de pacotes
+
+* Simular envio de pacote
+* Observar diferença no modo simulation
+
+| TCP         | UDP             |
+| ----------- | --------------- |
+| Confiável   | Rápido          |
+| Confirmação | Sem confirmação |
+| Mais lento  | Mais leve       |
+
+
+
+## 12. Testes finais (validação)
+
+Checklist do aluno:
+
+* ✅ PCs se comunicam dentro da subrede
+* ✅ PCs acessam outras subredes
+* ✅ Impressora acessível por todos
+* ✅ Ping entre todos os dispositivos
+
+
 
 Agora seu laboratório de sub-redes e roteamento estático com teste UDP e TCP está completo!
