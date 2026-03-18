@@ -333,3 +333,56 @@ Assista ao vídeo completo aqui: [Criando Sub-redes no Packet Tracer - Aula 15](
 
 
 http://googleusercontent.com/youtube_content/0
+
+
+
+Com base na **Aula 16** do curso de Cisco Packet Tracer, vamos completar o roteiro prático. Esta aula foca na **preparação e documentação** necessárias para configurar o roteamento estático (que será executado na aula seguinte).
+
+O instrutor enfatiza que, antes de digitar comandos, você deve entender a diferença entre roteamento estático e dinâmico e documentar toda a sua rede para evitar erros. [[04:04](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=244)]
+
+---
+
+### **Continuação do Roteiro Prático**
+
+#### **1. Entendendo o Conceito de Roteamento** [[00:41](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=41)]
+* **Rota Estática:** É configurada manualmente pelo administrador. O caminho é fixo e não muda, o que pode ser um problema se houver congestionamento, mas oferece controle total. [[01:21](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=81)]
+* **Rota Dinâmica:** O roteador escolhe o melhor caminho automaticamente com base em protocolos que analisam tráfego, distância (saltos) ou largura de banda. [[01:59](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=119)]
+
+#### **2. Documentação da Rede (Essencial)** [[04:19](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=259)]
+Abra um bloco de notas ou WordPad e liste todos os endereços configurados na Aula 15. Isso facilita a identificação de problemas.
+
+**Configuração dos PCs:** [[05:03](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=303)]
+* **PC Esquerda (HRBR):** IP `192.168.0.1` | Máscara `255.255.255.192` | Gateway `192.168.0.62`.
+* **PC Direita (Curso em Vídeo):** IP `192.168.0.129` | Máscara `255.255.255.192` | Gateway `192.168.0.190`. [[06:17](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=377)]
+
+**Configuração dos Roteadores:** [[08:30](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=510)]
+* **Roteador Bangu (Esquerda):**
+    * Interface `G0/0`: `192.168.0.62` (Ligada à LAN esquerda).
+    * Interface `G0/1`: `192.168.0.65` (Ligada ao outro roteador).
+* **Roteador Realengo (Direita):** [[09:29](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=569)]
+    * Interface `G0/1`: `192.168.0.66` (Ligada ao outro roteador).
+    * Interface `G0/0`: `192.168.0.190` (Ligada à LAN direita).
+
+#### **3. Identificação de Redes Conectadas e Não Conectadas** [[10:46](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=646)]
+Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
+
+* **Roteador Bangu (Esquerda):**
+    * *Redes Conectadas:* `192.168.0.0` e `192.168.0.64`. [[12:44](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=764)]
+    * *Rede NÃO Conectada:* `192.168.0.128`. (É nesta rede que precisamos ensinar o roteador a chegar). [[13:54](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=834)]
+* **Roteador Realengo (Direita):**
+    * *Redes Conectadas:* `192.168.0.64` e `192.168.0.128`. [[13:14](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=794)]
+    * *Rede NÃO Conectada:* `192.168.0.0`. (Precisamos ensinar o caminho para esta rede). [[14:32](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=872)]
+
+---
+
+### **Resumo para Prática**
+1.  **Renomeie os dispositivos** no Packet Tracer para "Bangu" e "Realengo" para seguir o exemplo. [[08:09](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=489)]
+2.  **Verifique se os IPs batem** com a sua documentação passando o mouse sobre os dispositivos. [[05:07](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=307)]
+3.  **Prepare a lógica:** "Para o Roteador Bangu alcançar a rede `192.168.0.128`, ele deve enviar os dados para o IP do próximo salto (`192.168.0.66`)".
+
+**Nota:** A configuração real dos comandos de rota estática (o "mão na massa" no CLI) será o tema da **Aula 17**. Mantenha este cenário salvo! [[15:00](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=900)]
+
+Assista à aula de preparação aqui: [Criando Rota Estática no Packet Tracer - Aula 16](https://www.youtube.com/watch?v=0t_dnaBb8_w)
+
+
+http://googleusercontent.com/youtube_content/1
