@@ -1,70 +1,49 @@
-# 🔷 Estrutura Didática da Aula (Cisco Packet Tracer)
+## 0. Nossa trilha de hoje
 
-## 1. 🚀 Abertura (Problema real) — 10 min
+1. Problema real
+2. Conceitos-chave
+3. Cálculo das subredes
+4. Montagem da rede
+5. Configuração de IP
+6. Configuração da Tabela de Roteamento
+7. Impressora compartilhada
+8. TCP vs UDP
+9. Testes
+10. Conclusões
 
-Comece com um cenário:
+## 1. Problema Real
 
-> “Uma empresa precisa organizar sua rede em setores (RH, Financeiro, TI, Operações), mas todos precisam imprimir em uma única impressora central.”
+Uma empresa precisa organizar sua rede em 2 setores: RH e Financeiro, mas todos precisam imprimir em uma única impressora central.
 
-👉 Perguntas para provocar:
+Reflita:
 
 * Como separar setores sem misturar tudo?
 * Como garantir que todos consigam imprimir?
 * Como evitar conflitos de IP?
 
-💡 Aqui você planta:
+## 2. Conceitos-chave
 
-* Subredes
-* Roteamento
-* Comunicação entre redes
+* O que é **subrede**?
+* Por que usar **roteadores**?
+* Máscara de sub-rede
+* IP da rede
+* IP do primeiro host
+* IP do último host
+* IP de broadcast
+* IP do Gateway (que
 
----
+## 3. Mapeamento de Rede
 
-## 2. 🧠 Conceito-chave antes da prática — 15 min
+1) Crie 3 sub-redes a partir de 192.168.0.1, onde cada sub-rede tenha no máximo 64 hosts;
+2) Preencha essa tabela
 
-Explique **o mínimo necessário para agir**:
-
-* O que é **subrede**
-* Por que usar **roteadores**
-* Diferença entre:
-
-  * IP de rede
-  * IP de host
-  * Gateway
-* Ideia de **máscara de sub-rede**
-
-👉 Use um exemplo simples:
-
-```
-192.168.1.0 /24 → dividir em 4 redes
-```
-
-Não aprofunde demais — a ideia é **dar ferramenta para a prática**.
-
----
-
-## 3. 🧮 Desafio guiado (cálculo das subredes) — 20 min
-
-1. Problema real
-2. Conceitos mínimos
-3. Cálculo das subredes
-4. Montagem da rede
-5. Configuração de IP
-6. Roteamento
-7. Impressora compartilhada
-8. TCP vs UDP
-9. Testes
-10. Reflexão
-
-Agora entra o raciocínio:
-
-### Proposta:
-
-* Criar **4 subredes**
-* Definir:
-
-  * Quantidade de hosts por rede
-  * Máscara adequada
+| Sub-rede | Localização/Uso              | Endereço de Rede | 1º Útil        | Último Útil     | Máscara           | Gateway (Configurado)      |
+|----------|-----------------------------|------------------|----------------|-----------------|-------------------|----------------------------|
+| Sub 1    | LAN Alunos (Esquerda)        | 192.168.?.?      | 192.168.?.?    | 192.168.0.?    | 255.255.255.?   | 192.168.0.?              |
+| Sub 2    | Link WAN (Roteadores)       | 192.168.0.?     | 192.168.?.?   | 192.168.0.?   | 255.255.255.?   | N/A (Ponto-a-Ponto)        |
+| Sub 3    | LAN Profs (Direita)      | 192.168.0.?    | 192.168.?.?  | 192.168.0.?   | 255.255.255.?   | 192.168.0.?             |
+| Sub 4    | Disponível (Reserva)        | 192.168.0.?    | 192.168.0.?  | 192.168.0.?   | 255.255.255.?   | -                          |
+3) 
 
 👉 Exemplo guiado:
 
