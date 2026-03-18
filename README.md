@@ -51,6 +51,9 @@ Reflita:
 
 <img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/topologia-01a.png" width="1000">
 
+
+<img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/topologia-01b.png" width="1000">
+
 ### 4.2 Lista de peças:
 * 02 Roteador: 1941
 * 02 Switch: 2960
