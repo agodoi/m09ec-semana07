@@ -142,6 +142,8 @@ No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interf
     * Interface `G0/1`: `192.168.0.66` (Ligada ao outro roteador).
     * Interface `G0/0`: `192.168.0.190` (Ligada à LAN direita).
 
+---
+
 ### **5.6. Identificação de Redes Conectadas e Não Conectadas**
 Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
 
@@ -167,6 +169,7 @@ O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede
     * **Next Hop:** `192.168.0.66` (O IP da interface do Roteador Professor que está virada para o Aluno).
 4.  Clique em **Add**.
 
+---
 
 ### **5.8. Configurando o Roteador Professor (Direita)**
 Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda (`192.168.0.0`).
@@ -177,6 +180,8 @@ Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda 
     * **Mask:** `255.255.255.192`
     * **Next Hop:** `192.168.0.65` (O IP da interface do Roteador Aluno que está virada para o Professor).
 4.  Clique em **Add**.
+
+---
 
 ### **5.9. Teste de Conectividade (Ping)**
 Para verificar se tudo deu certo:
@@ -194,6 +199,7 @@ Para verificar se tudo deu certo:
 ### **Dica de Diagnóstico**
 É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
 
+---
 
 ## 6. Impressora compartilhada
 
@@ -207,6 +213,7 @@ Para verificar se tudo deu certo:
 * Ping
 * Envio de “impressão”
 
+---
 
 ## 7. TCP vs UDP (exploração prática)
 
@@ -221,7 +228,7 @@ Para verificar se tudo deu certo:
 | Confirmação | Sem confirmação |
 | Mais lento  | Mais leve       |
 
-
+---
 
 ## 8. Testes finais (validação)
 
