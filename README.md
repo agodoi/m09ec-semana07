@@ -1,7 +1,3 @@
-Excelente proposta de aula — ela conecta muito bem **redes + prática + raciocínio lógico**, que é exatamente o perfil de Engenharia da Computação. Vou te sugerir uma **sequência didática envolvente (estilo mão na massa + descoberta guiada)**, alinhada com o seu perfil de aula.
-
----
-
 # 🔷 Estrutura Didática da Aula (Cisco Packet Tracer)
 
 ## 1. 🚀 Abertura (Problema real) — 10 min
@@ -48,6 +44,17 @@ Não aprofunde demais — a ideia é **dar ferramenta para a prática**.
 ---
 
 ## 3. 🧮 Desafio guiado (cálculo das subredes) — 20 min
+
+1. Problema real
+2. Conceitos mínimos
+3. Cálculo das subredes
+4. Montagem da rede
+5. Configuração de IP
+6. Roteamento
+7. Impressora compartilhada
+8. TCP vs UDP
+9. Testes
+10. Reflexão
 
 Agora entra o raciocínio:
 
@@ -237,18 +244,7 @@ Perguntas finais:
 
 ---
 
-# 🔥 Sequência resumida (para você usar direto no slide)
 
-1. Problema real
-2. Conceitos mínimos
-3. Cálculo das subredes
-4. Montagem da rede
-5. Configuração de IP
-6. Roteamento
-7. Impressora compartilhada
-8. TCP vs UDP
-9. Testes
-10. Reflexão
 
 ---
 
@@ -264,14 +260,3 @@ Exemplo:
 * Fase 2: Construir infraestrutura
 * Fase 3: Garantir comunicação
 * Fase 4: Validar sistema
-
----
-
-Se quiser, posso te entregar na próxima etapa:
-
-* Slides padrão SEDUC completos
-* Arquivo .pkt pronto para aula
-* Lista de exercícios estilo Kahoot
-* Roteiro de avaliação (barema)
-
-Só me fala 👍
