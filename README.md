@@ -43,137 +43,54 @@ Reflita:
 | Sub 2    | Link WAN (Roteadores)       | 192.168.0.?     | 192.168.?.?   | 192.168.0.?   | 255.255.255.?   | N/A (Ponto-a-Ponto)        |
 | Sub 3    | LAN Profs (Direita)      | 192.168.0.?    | 192.168.?.?  | 192.168.0.?   | 255.255.255.?   | 192.168.0.?             |
 | Sub 4    | Disponível (Reserva)        | 192.168.0.?    | 192.168.0.?  | 192.168.0.?   | 255.255.255.?   | -                          |
-3) 
 
-👉 Exemplo guiado:
 
-* Rede base: 192.168.1.0/24
-* Dividir em 4 → /26
+## 4. Montagem da Topologia no Cisco Packet Tracer
 
-| Subrede | Faixa               |
-| ------- | ------------------- |
-| 1       | 192.168.1.0 – 63    |
-| 2       | 192.168.1.64 – 127  |
-| 3       | 192.168.1.128 – 191 |
-| 4       | 192.168.1.192 – 255 |
+### 4.1 Topologia
 
-💡 Aqui você trabalha:
+COLOCAR A TOPOLOGIA
 
-* CIDR
-* Cálculo de hosts
-* Planejamento de rede
+### 4.2 Lista de peças:
+* 02 Roteador: 1941
+* 02 Switch: 2960
+* 04 PC-PT
+* 01 Printer-PT
 
----
-
-## 4. 🖥️ Montagem da Topologia — 30 min
-
-Agora sim: Packet Tracer.
-
-### Estrutura:
-
-* 1 roteador MASTER
-* 3 roteadores subordinados
-* Cada roteador → 1 subrede
-* Impressora em uma subrede específica
-* PCs distribuídos
-
----
-
-## 🔽 Visual da topologia (para o aluno entender rápido)
-
-![Image](https://community.cisco.com/t5/image/serverpage/image-id/209974iC0D7E221EE6E3999/image-size/large?px=999\&v=v2)
-
-![Image](https://studfile.net/html/2706/1268/html_UOe4Xz3rAk.6pza/htmlconvd-IRNZs72x1.jpg)
-
-![Image](https://www.ciscopress.com/content/images/chap1_9781587133329/elementLinks/01fig06_alt.jpg)
-
-![Image](https://learningnetwork.cisco.com/sfc/servlet.shepherd/version/renditionDownload?contentId=05T3i00000ACKZw\&operationContext=CHATTER\&page=0\&rendition=THUMB720BY480\&versionId=0683i000001rnSx)
-
----
-
-### Objetivo do aluno aqui:
+### 4.3 O que fazer dentro do Packet Tracer?
 
 * Arrastar dispositivos
 * Conectar corretamente (cabos)
 * Entender hierarquia de rede
 
----
+## 4.4 Configuração manual de IP
 
-## 5. ⚙️ Configuração manual de IP — 25 min
+* Configurar interfaces dos roteadores digitando o IP e máscara;
+* Ligar cada interface;
+* Definir IP manualmente nos PCs;
+* Defini máscara manualmente nos PCs;
+* Definir gateway nos PCs.
 
-Agora entra a prática técnica:
 
-Cada aluno deve:
+## 7. Impressora compartilhada
 
-* Definir IP manualmente nos PCs
-* Definir gateway
-* Configurar interfaces dos roteadores
-
-👉 Exemplo:
-
-```
-PC:
-IP: 192.168.1.10
-Mask: 255.255.255.192
-Gateway: 192.168.1.1
-```
-
-💡 Aqui você reforça:
-
-* Endereçamento
-* Gateway
-* Comunicação local vs remota
-
----
-
-## 6. 🔁 Roteamento entre redes — 25 min
-
-Agora o ponto-chave:
-
-* Configurar rotas (estático ou RIP/OSPF — você decide o nível)
-
-👉 Sugestão didática:
-
-* Começar com **roteamento estático**
-* Depois provocar:
-
-  > “E se essa rede crescer?”
-
-💡 Aqui entra:
-
-* Conceito de camada de rede
-* Encaminhamento de pacotes
-
----
-
-## 7. 🖨️ Impressora compartilhada — 15 min
-
-Desafio prático:
+### 7.1 Desafio prático:
 
 * Colocar impressora em uma subrede
 * Garantir acesso de todas as outras
 
-👉 Teste:
+### Teste:
 
 * Ping
 * Envio de “impressão”
 
-💡 Conceitos:
 
-* Interconectividade
-* Serviços na rede
+## 8. TCP vs UDP (exploração prática)
 
----
+### 8.1 Simular envios de pacotes
 
-## 8. 🌐 TCP vs UDP (exploração prática) — 20 min
-
-Agora você eleva o nível:
-
-### Mostrar no Packet Tracer:
-
-* Simulação de pacotes
-
-👉 Comparação:
+* Simular envio de pacote
+* Observar diferença no modo simulation
 
 | TCP         | UDP             |
 | ----------- | --------------- |
@@ -181,28 +98,9 @@ Agora você eleva o nível:
 | Confirmação | Sem confirmação |
 | Mais lento  | Mais leve       |
 
----
 
-## 🔽 Visual para reforçar conceito
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/07/udp-and-tcp-comparison.jpg)
-
-![Image](https://www.cloud4y.ru/upload/medialibrary/b74/d97dkgfm5tu0ngqu8oirrev3ltj4rqql/TCP-i-UDP.jpeg)
-
-![Image](https://www.cdebyte.com/Uploadfiles/Picture/2023-3-24/20233241342233065.jpg)
-
-![Image](https://miro.medium.com/v2/resize%3Afit%3A1400/1%2AW4PkTTwBdrH4MkICc4gXMw.png)
-
----
-
-👉 Atividade:
-
-* Simular envio de pacote
-* Observar diferença no modo simulation
-
----
-
-## 9. 🧪 Testes finais (validação) — 15 min
+## 9. Testes finais (validação)
 
 Checklist do aluno:
 
@@ -211,9 +109,9 @@ Checklist do aluno:
 * ✅ Impressora acessível por todos
 * ✅ Ping entre todos os dispositivos
 
----
 
-## 10. 🎯 Fechamento (reflexão) — 10 min
+
+## 10. Conclusões
 
 Perguntas finais:
 
@@ -221,69 +119,40 @@ Perguntas finais:
 * Qual o papel do roteador?
 * TCP ou UDP: quando usar cada um?
 
----
 
-
-
----
-
-# 💡 Dica pedagógica (do seu perfil)
-
-Essa aula funciona muito bem se você tratar como:
-
-> **“Missão de Engenharia”**
-
-Exemplo:
-
-* Fase 1: Planejar rede
-* Fase 2: Construir infraestrutura
-* Fase 3: Garantir comunicação
-* Fase 4: Validar sistema
-
-
-
-Este vídeo da **Hardware Redes Brasil** ensina como dividir uma rede principal em sub-redes menores para que roteadores possam se comunicar (já que roteadores exigem redes diferentes em cada interface).
-
-Abaixo, apresento um roteiro prático detalhado para você reproduzir todo o laboratório no **Cisco Packet Tracer**.
-
----
-
-### **Objetivo do Laboratório**
-Dividir a rede Classe C `192.168.0.0/24` em sub-redes menores usando a máscara `255.255.255.192` e configurar a comunicação básica entre dois roteadores.
-
----
+## Gabarito
 
 ### **1. Preparação do Cenário (Topologia)**
 Abra o Packet Tracer e adicione os seguintes dispositivos:
-* **Roteadores:** 2x Roteadores (Modelo 2911 ou similar). [[00:32](http://www.youtube.com/watch?v=X8tboS6NZLA&t=32)]
-* **Switches:** 2x Switches (Modelo 2960). [[00:44](http://www.youtube.com/watch?v=X8tboS6NZLA&t=44)]
-* **Computadores:** 2x PCs (um para cada lado). [[00:51](http://www.youtube.com/watch?v=X8tboS6NZLA&t=51)]
+* **Roteadores:** 2x Roteadores (Modelo 2911 ou similar).
+* **Switches:** 2x Switches (Modelo 2960).
+* **Computadores:** 2x PCs (um para cada lado).
 
 **Conexões de Cabos:**
 1.  **PC para Switch:** Cabo Direto (Copper Straight-Through) na porta FastEthernet.
-2.  **Switch para Roteador:** Cabo Direto conectando a porta **Gigabit 0/1** do Switch à porta **Gigabit 0/0** do Roteador. [[01:08](http://www.youtube.com/watch?v=X8tboS6NZLA&t=68)]
-3.  **Roteador para Roteador:** Cabo Cruzado (**Copper Cross-over**) conectando as portas **Gigabit 0/1** de ambos os roteadores. [[01:28](http://www.youtube.com/watch?v=X8tboS6NZLA&t=88)]
+2.  **Switch para Roteador:** Cabo Direto conectando a porta **Gigabit 0/1** do Switch à porta **Gigabit 0/0** do Roteador.
+3.  **Roteador para Roteador:** Cabo Cruzado (**Copper Cross-over**) conectando as portas **Gigabit 0/1** de ambos os roteadores.
 
 ---
 
 ### **2. Cálculo das Sub-redes**
-O instrutor utiliza a técnica do "salto" para definir as redes: [[06:08](http://www.youtube.com/watch?v=X8tboS6NZLA&t=368)]
+O instrutor utiliza a técnica do "salto" para definir as redes:
 * **Máscara Escolhida:** `255.255.255.192`
 * **Cálculo do Salto:** $256 - 192 = 64$.
 * **Sub-redes Criadas:**
     * **Sub-rede 1 (LAN Esquerda):** `192.168.0.0` (IPs válidos: `.1` a `.62`).
     * **Sub-rede 2 (Link Roteadores):** `192.168.0.64` (IPs válidos: `.65` a `.126`).
-    * **Sub-rede 3 (LAN Direita):** `192.168.0.128` (IPs válidos: `.129` a `.190`). [[10:14](http://www.youtube.com/watch?v=X8tboS6NZLA&t=614)]
+    * **Sub-rede 3 (LAN Direita):** `192.168.0.128` (IPs válidos: `.129` a `.190`).
 
 ---
 
 ### **3. Configuração de IP nos PCs**
-**PC da Esquerda:** [[11:56](http://www.youtube.com/watch?v=X8tboS6NZLA&t=716)]
+**PC da Esquerda:**
 * **IP Address:** `192.168.0.1`
 * **Subnet Mask:** `255.255.255.192`
 * **Default Gateway:** `192.168.0.62`
 
-**PC da Direita:** [[14:48](http://www.youtube.com/watch?v=X8tboS6NZLA&t=888)]
+**PC da Direita:**
 * **IP Address:** `192.168.0.129`
 * **Subnet Mask:** `255.255.255.192`
 * **Default Gateway:** `192.168.0.190`
@@ -294,74 +163,83 @@ O instrutor utiliza a técnica do "salto" para definir as redes: [[06:08](http:/
 No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interfaces (clique em "On").
 
 **Roteador 0 (Esquerda):**
-* **Interface G0/0 (LAN):** IP `192.168.0.62` / Máscara `255.255.255.192`. [[14:15](http://www.youtube.com/watch?v=X8tboS6NZLA&t=855)]
-* **Interface G0/1 (WAN/Meio):** IP `192.168.0.65` / Máscara `255.255.255.192`. [[16:10](http://www.youtube.com/watch?v=X8tboS6NZLA&t=970)]
+* **Interface G0/0 (LAN):** IP `192.168.0.62` / Máscara `255.255.255.192`.
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.65` / Máscara `255.255.255.192`.
 
 **Roteador 1 (Direita):**
-* **Interface G0/0 (LAN):** IP `192.168.0.190` / Máscara `255.255.255.192`. [[15:34](http://www.youtube.com/watch?v=X8tboS6NZLA&t=934)]
-* **Interface G0/1 (WAN/Meio):** IP `192.168.0.66` / Máscara `255.255.255.192`. [[16:40](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1000)]
+* **Interface G0/0 (LAN):** IP `192.168.0.190` / Máscara `255.255.255.192`.
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.66` / Máscara `255.255.255.192`.
 
 ---
 
-### **5. Verificação e Observações Finais**
-* **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**). [[01:40](http://www.youtube.com/watch?v=X8tboS6NZLA&t=100)]
-* **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`. [[17:33](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1053)]
-* **Importante:** O instrutor ressalta que, embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Para isso, é necessária a **Tabela de Roteamento** (estático ou dinâmico), que é o tema da aula seguinte. [[17:39](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1059)]
-
-Assista ao vídeo completo aqui: [Criando Sub-redes no Packet Tracer - Aula 15](https://www.youtube.com/watch?v=X8tboS6NZLA)
+### **5. Verificação e Observações Parciais**
+* **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**).
+* **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`.
+* **Importante:** Embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Para isso, é necessária a **Tabela de Roteamento** (estático ou dinâmico).
 
 
-http://googleusercontent.com/youtube_content/0
+**Configuração dos PCs:**
+* **PC Esquerda (PC1):** IP `192.168.0.1` | Máscara `255.255.255.192` | Gateway `192.168.0.62`.
+* **PC Direita (PC4):** IP `192.168.0.129` | Máscara `255.255.255.192` | Gateway `192.168.0.190`.
 
-
-
-Com base na **Aula 16** do curso de Cisco Packet Tracer, vamos completar o roteiro prático. Esta aula foca na **preparação e documentação** necessárias para configurar o roteamento estático (que será executado na aula seguinte).
-
-O instrutor enfatiza que, antes de digitar comandos, você deve entender a diferença entre roteamento estático e dinâmico e documentar toda a sua rede para evitar erros. [[04:04](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=244)]
-
----
-
-### **Continuação do Roteiro Prático**
-
-#### **1. Entendendo o Conceito de Roteamento** [[00:41](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=41)]
-* **Rota Estática:** É configurada manualmente pelo administrador. O caminho é fixo e não muda, o que pode ser um problema se houver congestionamento, mas oferece controle total. [[01:21](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=81)]
-* **Rota Dinâmica:** O roteador escolhe o melhor caminho automaticamente com base em protocolos que analisam tráfego, distância (saltos) ou largura de banda. [[01:59](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=119)]
-
-#### **2. Documentação da Rede (Essencial)** [[04:19](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=259)]
-Abra um bloco de notas ou WordPad e liste todos os endereços configurados na Aula 15. Isso facilita a identificação de problemas.
-
-**Configuração dos PCs:** [[05:03](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=303)]
-* **PC Esquerda (HRBR):** IP `192.168.0.1` | Máscara `255.255.255.192` | Gateway `192.168.0.62`.
-* **PC Direita (Curso em Vídeo):** IP `192.168.0.129` | Máscara `255.255.255.192` | Gateway `192.168.0.190`. [[06:17](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=377)]
-
-**Configuração dos Roteadores:** [[08:30](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=510)]
-* **Roteador Bangu (Esquerda):**
+**Configuração dos Roteadores:**
+* **Roteador Aluno (Esquerda):**
     * Interface `G0/0`: `192.168.0.62` (Ligada à LAN esquerda).
     * Interface `G0/1`: `192.168.0.65` (Ligada ao outro roteador).
-* **Roteador Realengo (Direita):** [[09:29](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=569)]
+* **Roteador Professor (Direita):**
     * Interface `G0/1`: `192.168.0.66` (Ligada ao outro roteador).
     * Interface `G0/0`: `192.168.0.190` (Ligada à LAN direita).
 
-#### **3. Identificação de Redes Conectadas e Não Conectadas** [[10:46](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=646)]
+#### **3. Identificação de Redes Conectadas e Não Conectadas**
 Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
 
-* **Roteador Bangu (Esquerda):**
-    * *Redes Conectadas:* `192.168.0.0` e `192.168.0.64`. [[12:44](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=764)]
-    * *Rede NÃO Conectada:* `192.168.0.128`. (É nesta rede que precisamos ensinar o roteador a chegar). [[13:54](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=834)]
-* **Roteador Realengo (Direita):**
-    * *Redes Conectadas:* `192.168.0.64` e `192.168.0.128`. [[13:14](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=794)]
-    * *Rede NÃO Conectada:* `192.168.0.0`. (Precisamos ensinar o caminho para esta rede). [[14:32](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=872)]
+* **Roteador Aluno (Esquerda):**
+    * *Redes Conectadas:* `192.168.0.0` e `192.168.0.64`.
+    * *Rede NÃO Conectada:* `192.168.0.128`. (É nesta rede que precisamos ensinar o roteador a chegar).
+* **Roteador Professor (Direita):**
+    * *Redes Conectadas:* `192.168.0.64` e `192.168.0.128`.
+    * *Rede NÃO Conectada:* `192.168.0.0`. (Precisamos ensinar o caminho para esta rede).
+
+
+O segredo aqui é o conceito de **Next Hop** (Próximo Salto): o endereço de IP do roteador vizinho que está no caminho para o destino.
 
 ---
 
-### **Resumo para Prática**
-1.  **Renomeie os dispositivos** no Packet Tracer para "Bangu" e "Realengo" para seguir o exemplo. [[08:09](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=489)]
-2.  **Verifique se os IPs batem** com a sua documentação passando o mouse sobre os dispositivos. [[05:07](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=307)]
-3.  **Prepare a lógica:** "Para o Roteador Bangu alcançar a rede `192.168.0.128`, ele deve enviar os dados para o IP do próximo salto (`192.168.0.66`)".
+#### **6. Configurando o Roteador Aluno (Esquerda)**
+O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede do PC da direita (`192.168.0.128`).
+1.  Clique no Roteador **Aluno**.
+2.  Vá na aba **Config** > **Static**.
+3.  Preencha os campos:
+    * **Network:** `192.168.0.128` (A rede de destino que ele não conhece).
+    * **Mask:** `255.255.255.192`
+    * **Next Hop:** `192.168.0.66` (O IP da interface do Roteador Professor que está virada para o Aluno).
+4.  Clique em **Add**.
 
-**Nota:** A configuração real dos comandos de rota estática (o "mão na massa" no CLI) será o tema da **Aula 17**. Mantenha este cenário salvo! [[15:00](http://www.youtube.com/watch?v=0t_dnaBb8_w&t=900)]
 
-Assista à aula de preparação aqui: [Criando Rota Estática no Packet Tracer - Aula 16](https://www.youtube.com/watch?v=0t_dnaBb8_w)
+#### **7. Configurando o Roteador Professor (Direita)**
+Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda (`192.168.0.0`).
+1.  Clique no Roteador **Professor**.
+2.  Vá em **Config** > **Static**.
+3.  Preencha os campos:
+    * **Network:** `192.168.0.0` (A rede de destino à esquerda).
+    * **Mask:** `255.255.255.192`
+    * **Next Hop:** `192.168.0.65` (O IP da interface do Roteador Aluno que está virada para o Professor).
+4.  Clique em **Add**.
 
+#### **8. Teste de Conectividade (Ping)**
+Para verificar se tudo deu certo:
+1.  Mude para o modo **Simulation** (canto inferior direito).
+2.  Clique no filtro **Edit Filters** e deixe marcado apenas o protocolo **ICMP**.
+3.  Use a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
+4.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
+5.  Clique novamente em filtro **Edit Filters** e deixe marcado apenas o protocolo **TCP**.
+6.  Use novamente a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
+7.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
+8.  Faça o mesmo para o protocolo UDP. 
 
-http://googleusercontent.com/youtube_content/1
+---
+
+### **Dica de Diagnóstico**
+É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
+
+Agora seu laboratório de sub-redes e roteamento estático com teste UDP e TCP está completo!
