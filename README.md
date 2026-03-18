@@ -260,3 +260,76 @@ Exemplo:
 * Fase 2: Construir infraestrutura
 * Fase 3: Garantir comunicação
 * Fase 4: Validar sistema
+
+
+
+Este vídeo da **Hardware Redes Brasil** ensina como dividir uma rede principal em sub-redes menores para que roteadores possam se comunicar (já que roteadores exigem redes diferentes em cada interface).
+
+Abaixo, apresento um roteiro prático detalhado para você reproduzir todo o laboratório no **Cisco Packet Tracer**.
+
+---
+
+### **Objetivo do Laboratório**
+Dividir a rede Classe C `192.168.0.0/24` em sub-redes menores usando a máscara `255.255.255.192` e configurar a comunicação básica entre dois roteadores.
+
+---
+
+### **1. Preparação do Cenário (Topologia)**
+Abra o Packet Tracer e adicione os seguintes dispositivos:
+* **Roteadores:** 2x Roteadores (Modelo 2911 ou similar). [[00:32](http://www.youtube.com/watch?v=X8tboS6NZLA&t=32)]
+* **Switches:** 2x Switches (Modelo 2960). [[00:44](http://www.youtube.com/watch?v=X8tboS6NZLA&t=44)]
+* **Computadores:** 2x PCs (um para cada lado). [[00:51](http://www.youtube.com/watch?v=X8tboS6NZLA&t=51)]
+
+**Conexões de Cabos:**
+1.  **PC para Switch:** Cabo Direto (Copper Straight-Through) na porta FastEthernet.
+2.  **Switch para Roteador:** Cabo Direto conectando a porta **Gigabit 0/1** do Switch à porta **Gigabit 0/0** do Roteador. [[01:08](http://www.youtube.com/watch?v=X8tboS6NZLA&t=68)]
+3.  **Roteador para Roteador:** Cabo Cruzado (**Copper Cross-over**) conectando as portas **Gigabit 0/1** de ambos os roteadores. [[01:28](http://www.youtube.com/watch?v=X8tboS6NZLA&t=88)]
+
+---
+
+### **2. Cálculo das Sub-redes**
+O instrutor utiliza a técnica do "salto" para definir as redes: [[06:08](http://www.youtube.com/watch?v=X8tboS6NZLA&t=368)]
+* **Máscara Escolhida:** `255.255.255.192`
+* **Cálculo do Salto:** $256 - 192 = 64$.
+* **Sub-redes Criadas:**
+    * **Sub-rede 1 (LAN Esquerda):** `192.168.0.0` (IPs válidos: `.1` a `.62`).
+    * **Sub-rede 2 (Link Roteadores):** `192.168.0.64` (IPs válidos: `.65` a `.126`).
+    * **Sub-rede 3 (LAN Direita):** `192.168.0.128` (IPs válidos: `.129` a `.190`). [[10:14](http://www.youtube.com/watch?v=X8tboS6NZLA&t=614)]
+
+---
+
+### **3. Configuração de IP nos PCs**
+**PC da Esquerda:** [[11:56](http://www.youtube.com/watch?v=X8tboS6NZLA&t=716)]
+* **IP Address:** `192.168.0.1`
+* **Subnet Mask:** `255.255.255.192`
+* **Default Gateway:** `192.168.0.62`
+
+**PC da Direita:** [[14:48](http://www.youtube.com/watch?v=X8tboS6NZLA&t=888)]
+* **IP Address:** `192.168.0.129`
+* **Subnet Mask:** `255.255.255.192`
+* **Default Gateway:** `192.168.0.190`
+
+---
+
+### **4. Configuração dos Roteadores**
+No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interfaces (clique em "On").
+
+**Roteador 0 (Esquerda):**
+* **Interface G0/0 (LAN):** IP `192.168.0.62` / Máscara `255.255.255.192`. [[14:15](http://www.youtube.com/watch?v=X8tboS6NZLA&t=855)]
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.65` / Máscara `255.255.255.192`. [[16:10](http://www.youtube.com/watch?v=X8tboS6NZLA&t=970)]
+
+**Roteador 1 (Direita):**
+* **Interface G0/0 (LAN):** IP `192.168.0.190` / Máscara `255.255.255.192`. [[15:34](http://www.youtube.com/watch?v=X8tboS6NZLA&t=934)]
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.66` / Máscara `255.255.255.192`. [[16:40](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1000)]
+
+---
+
+### **5. Verificação e Observações Finais**
+* **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**). [[01:40](http://www.youtube.com/watch?v=X8tboS6NZLA&t=100)]
+* **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`. [[17:33](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1053)]
+* **Importante:** O instrutor ressalta que, embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Para isso, é necessária a **Tabela de Roteamento** (estático ou dinâmico), que é o tema da aula seguinte. [[17:39](http://www.youtube.com/watch?v=X8tboS6NZLA&t=1059)]
+
+Assista ao vídeo completo aqui: [Criando Sub-redes no Packet Tracer - Aula 15](https://www.youtube.com/watch?v=X8tboS6NZLA)
+
+
+http://googleusercontent.com/youtube_content/0
