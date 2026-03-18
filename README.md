@@ -74,7 +74,7 @@ COLOCAR A TOPOLOGIA
 
 ## 5. Configurações Gerais
 
-### **1. Preparação do Cenário (Topologia)**
+### **5.1. Preparação do Cenário (Topologia)**
 Abra o Packet Tracer e adicione os seguintes dispositivos:
 * **Roteadores:** 2x Roteadores (Modelo 2911 ou similar).
 * **Switches:** 2x Switches (Modelo 2960).
@@ -87,7 +87,7 @@ Abra o Packet Tracer e adicione os seguintes dispositivos:
 
 ---
 
-### **2. Cálculo das Sub-redes**
+### **5.2. Cálculo das Sub-redes**
 O instrutor utiliza a técnica do "salto" para definir as redes:
 * **Máscara Escolhida:** `255.255.255.192`
 * **Cálculo do Salto:** $256 - 192 = 64$.
@@ -98,7 +98,7 @@ O instrutor utiliza a técnica do "salto" para definir as redes:
 
 ---
 
-### **3. Configuração de IP nos PCs**
+### **5.3. Configuração de IP nos PCs**
 **PC da Esquerda:**
 * **IP Address:** `192.168.0.1`
 * **Subnet Mask:** `255.255.255.192`
@@ -111,7 +111,7 @@ O instrutor utiliza a técnica do "salto" para definir as redes:
 
 ---
 
-### **4. Configuração dos Roteadores**
+### **5.4. Configuração dos Roteadores**
 No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interfaces (clique em "On").
 
 **Roteador 0 (Esquerda):**
@@ -124,7 +124,7 @@ No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interf
 
 ---
 
-### **5. Verificação e Observações Parciais**
+### **5.5. Verificação e Observações Parciais**
 * **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**).
 * **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`.
 * **Importante:** Embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Para isso, é necessária a **Tabela de Roteamento** (estático ou dinâmico).
@@ -142,7 +142,7 @@ No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interf
     * Interface `G0/1`: `192.168.0.66` (Ligada ao outro roteador).
     * Interface `G0/0`: `192.168.0.190` (Ligada à LAN direita).
 
-### **6. Identificação de Redes Conectadas e Não Conectadas**
+### **5.6. Identificação de Redes Conectadas e Não Conectadas**
 Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
 
 * **Roteador Aluno (Esquerda):**
@@ -157,7 +157,7 @@ O segredo aqui é o conceito de **Next Hop** (Próximo Salto): o endereço de IP
 
 ---
 
-### **7. Configurando o Roteador Aluno (Esquerda)**
+### **5.7. Configurando o Roteador Aluno (Esquerda)**
 O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede do PC da direita (`192.168.0.128`).
 1.  Clique no Roteador **Aluno**.
 2.  Vá na aba **Config** > **Static**.
@@ -168,7 +168,7 @@ O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede
 4.  Clique em **Add**.
 
 
-### **8. Configurando o Roteador Professor (Direita)**
+### **5.8. Configurando o Roteador Professor (Direita)**
 Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda (`192.168.0.0`).
 1.  Clique no Roteador **Professor**.
 2.  Vá em **Config** > **Static**.
@@ -178,7 +178,7 @@ Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda 
     * **Next Hop:** `192.168.0.65` (O IP da interface do Roteador Aluno que está virada para o Professor).
 4.  Clique em **Add**.
 
-### **9. Teste de Conectividade (Ping)**
+### **5.9. Teste de Conectividade (Ping)**
 Para verificar se tudo deu certo:
 1.  Mude para o modo **Simulation** (canto inferior direito).
 2.  Clique no filtro **Edit Filters** e deixe marcado apenas o protocolo **ICMP**.
@@ -195,22 +195,22 @@ Para verificar se tudo deu certo:
 É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
 
 
-## 10. Impressora compartilhada
+## 6. Impressora compartilhada
 
-### 10.1 Desafio prático:
+### 6.1 Desafio prático:
 
 * Colocar impressora em uma subrede
 * Garantir acesso de todas as outras
 
-### Teste:
+### 6.2 Teste:
 
 * Ping
 * Envio de “impressão”
 
 
-## 11. TCP vs UDP (exploração prática)
+## 7. TCP vs UDP (exploração prática)
 
-### 11.1 Simular envios de pacotes
+### 7.1 Simular envios de pacotes
 
 * Simular envio de pacote
 * Observar diferença no modo simulation
@@ -223,7 +223,7 @@ Para verificar se tudo deu certo:
 
 
 
-## 12. Testes finais (validação)
+## 8. Testes finais (validação)
 
 Checklist do aluno:
 
