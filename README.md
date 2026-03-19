@@ -197,12 +197,7 @@ Para verificar se tudo deu certo:
 
 
 5.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-6.  Clique novamente em filtro **Edit Filters** e deixe marcado apenas o protocolo **TCP**.
-7.  Use novamente a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
-8.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-9.  Faça o mesmo para o protocolo UDP. 
-
----
+6.  Vai clicando 
 
 ### **Dica de Diagnóstico**
 É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
