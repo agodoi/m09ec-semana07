@@ -79,7 +79,7 @@ Abra o Packet Tracer e adicione os seguintes dispositivos:
 * **Roteadores:** 2x Roteadores (Modelo 1941 ou similar);
 * **Switches:** 2x Switches (Modelo 2960);
 * **Computadores:** 4x PCs (dois para cada lado);
-* **Impressora:** 1x Impressora (Modelo Printer-PT).
+* **Impressora:** 1x Impressora (Modelo Printer-PT). Será instalada no lado esquerdo.
 
 **Conexões de Cabos:**
 1.  **PC e Impressora para Switch:** Cabo Direto (Copper Straight-Through) na porta FastEthernet.
@@ -104,37 +104,38 @@ O instrutor utiliza a técnica do "salto" para definir as redes:
 **PC da Esquerda:**
 * **IP Address:** `192.168.0.1`
 * **Subnet Mask:** `255.255.255.192`
-* **Default Gateway:** `192.168.0.62`
+* **Default Gateway:** `192.168.0.62`--> boa prática é adotar o último endereço útil.
 
 **PC da Direita:**
 * **IP Address:** `192.168.0.129`
 * **Subnet Mask:** `255.255.255.192`
-* **Default Gateway:** `192.168.0.190`
+* **Default Gateway:** `192.168.0.190` --> boa prática é adotar o último endereço útil.
 
 ---
 
 ### **5.4. Configuração dos Roteadores**
-No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interfaces (clique em "On").
+No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interfaces (clique em "On"). Os cabos deixarão de ficar vermelho e ficarão verdes.
 
 **Roteador 0 (Esquerda):**
-* **Interface G0/0 (LAN):** IP `192.168.0.62` / Máscara `255.255.255.192`.
-* **Interface G0/1 (WAN/Meio):** IP `192.168.0.65` / Máscara `255.255.255.192`.
+* **Interface G0/0 (LAN):** IP `192.168.0.62` / Máscara `255.255.255.192`. Esse IP será o Gateway dos PCS da esquerda.
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.65` / Máscara `255.255.255.192`. Esse IP não é Gateway de ninguém. É só uma conexão entre dois roteadores.
 
 **Roteador 1 (Direita):**
-* **Interface G0/0 (LAN):** IP `192.168.0.190` / Máscara `255.255.255.192`.
-* **Interface G0/1 (WAN/Meio):** IP `192.168.0.66` / Máscara `255.255.255.192`.
+* **Interface G0/0 (LAN):** IP `192.168.0.190` / Máscara `255.255.255.192`. Esse IP será o Gateway dos PCS da direita.
+* **Interface G0/1 (WAN/Meio):** IP `192.168.0.66` / Máscara `255.255.255.192`. Esse IP não é Gateway de ninguém. É só uma conexão entre dois roteadores.
 
 ---
 
 ### **5.5. Verificação e Observações Parciais**
-* **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**).
-* **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`.
-* **Importante:** Embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Para isso, é necessária a **Tabela de Roteamento** (estático ou dinâmico).
+* **Luzes Verdes:** Certifique-se de que todas as interfaces nos roteadores foram ligadas (**Port Status: On**). Os cabos precisam estar verdes.
+* **Comunicação:** Neste ponto, o PC da esquerda conseguirá "pingar" o seu Gateway (`.62`), e os dois roteadores conseguirão se comunicar entre si através da rede `.64`. Faça o teste do ping do PC da esquerda até o seu Gateway. Por enquanto, não executar ping no Roteador da Esquerda para o Direita.
+* **Importante:** Embora as sub-redes estejam configuradas, os PCs de lados opostos ainda não se comunicam. Por que?
+* Porque é necessári configurar a **Tabela de Roteamento** (estático ou dinâmico). Os roteadores não sabem que eles estão conectados entre si. O protocolo OSPF não foi ativado. E na aula de hoje, não vamos ativar o OSPF e sim, fazer manualmente a tabela de roteamento.
 
 
 **Configuração dos PCs:**
-* **PC Esquerda (PC1):** IP `192.168.0.1` | Máscara `255.255.255.192` | Gateway `192.168.0.62`.
-* **PC Direita (PC4):** IP `192.168.0.129` | Máscara `255.255.255.192` | Gateway `192.168.0.190`.
+* **Hosts Esquerda (PC1 PC2 Impressora):** IP `192.168.0.1` | Máscara `255.255.255.192` | Gateway `192.168.0.62`. Siga a lógica do mapeamento para os demais hosts da esquerda.
+* **Hosts Direita (PC3 PC4):** IP `192.168.0.129` | Máscara `255.255.255.192` | Gateway `192.168.0.190`. Siga a lógica do mapeamento para os demais hosts da direita.
 
 **Configuração dos Roteadores:**
 * **Roteador Aluno (Esquerda):**
@@ -147,7 +148,9 @@ No Packet Tracer, clique no roteador, vá na aba **Config** e habilite as interf
 ---
 
 ### **5.6. Identificação de Redes Conectadas e Não Conectadas**
-Para configurar o roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo.
+Para configurar a tabela de roteamento, você precisa dizer ao roteador como chegar nas redes que **não** estão ligadas diretamente a ele por um cabo. REPETINDO: **NÃO ESTÃO LIGADAS DIRETAMENTE**.
+
+### Pensa comigo, meu fi:
 
 * **Roteador Aluno (Esquerda):**
     * *Redes Conectadas:* `192.168.0.0` e `192.168.0.64`.
@@ -156,19 +159,18 @@ Para configurar o roteamento, você precisa dizer ao roteador como chegar nas re
     * *Redes Conectadas:* `192.168.0.64` e `192.168.0.128`.
     * *Rede NÃO Conectada:* `192.168.0.0`. (Precisamos ensinar o caminho para esta rede).
 
-
 O segredo aqui é o conceito de **Next Hop** (Próximo Salto): o endereço de IP do roteador vizinho que está no caminho para o destino.
 
 ---
 
-### **5.7. Configurando o Roteador Aluno (Esquerda)**
-O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede do PC da direita (`192.168.0.128`).
+### **5.7. Configurando a Tabela de Roteamento do Roteador Aluno (Esquerda)**
+O Roteador Auno conhece as redes à sua volta, mas não sabe como chegar na rede dos PCs da direita (`192.168.0.128`). Certo?
 1.  Clique no Roteador **Aluno**.
 2.  Vá na aba **Config** > **Static**.
 3.  Preencha os campos:
     * **Network:** `192.168.0.128` (A rede de destino que ele não conhece).
     * **Mask:** `255.255.255.192`
-    * **Next Hop:** `192.168.0.66` (O IP da interface do Roteador Professor que está virada para o Aluno).
+    * **Next Hop:** `192.168.0.66` (O IP da interface do Roteador Professor que está virada para o Aluno). --> ENTENDA ISSO AQUI, PELAMORDEDEUS!!! É O PONTO MAIS ALTO DA AULA.
 4.  Clique em **Add**.
 
 ---
@@ -180,7 +182,7 @@ Agora o inverso: o Professor precisa aprender o caminho para a rede da esquerda 
 3.  Preencha os campos:
     * **Network:** `192.168.0.0` (A rede de destino à esquerda).
     * **Mask:** `255.255.255.192`
-    * **Next Hop:** `192.168.0.65` (O IP da interface do Roteador Aluno que está virada para o Professor).
+    * **Next Hop:** `192.168.0.?` (O IP da interface do Roteador Aluno que está virada para o Professor). Descubra qual é esse IP para ver se você entendeu.
 4.  Clique em **Add**.
 
 ---
