@@ -96,7 +96,7 @@ O instrutor utiliza a técnica do "salto" para definir as redes:
     * **Sub-rede 1 (LAN Esquerda):** `192.168.0.0` (IPs válidos: `.1` a `.62`).
     * **Sub-rede 2 (Link Roteadores):** `192.168.0.64` (IPs válidos: `.65` a `.126`).
     * **Sub-rede 3 (LAN Direita):** `192.168.0.128` (IPs válidos: `.129` a `.190`).
-    * **Sub-rede 4 (LAN espansão):** `192.168.0.192` (IPs válidos: `.193` a `.254`).
+    * **Sub-rede 4 (LAN reserva):** `192.168.0.192` (IPs válidos: `.193` a `.254`).
 
 ---
 
