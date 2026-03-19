@@ -197,7 +197,7 @@ Para verificar se tudo deu certo:
 
 
 5.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-6.  Vai clicando no avançar.
+6.  Dica: vai clicando no avançar que a cartinha vai mais rápida.
 
 <img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/simulacao.png" width="800">
 
@@ -224,8 +224,8 @@ Para verificar se tudo deu certo:
 
 ### 7.1 Simular envios de pacotes
 
-* Simular envio de pacote
-* Observar diferença no modo simulation
+* No Packet Tracer não é possível simular apenas o pacote TCP;
+* Mas na prática, temos o seguinte:
 
 | TCP         | UDP             |
 | ----------- | --------------- |
