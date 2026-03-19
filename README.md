@@ -49,7 +49,7 @@ Reflita:
 
 ### 4.1 Topologia
 
-<img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/topologia-01c.png" width="800">
+<img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/topologia-01d.png" width="800">
 
 ### 4.2 Lista de peças:
 * 02 Roteador: 1941
