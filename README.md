@@ -76,12 +76,13 @@ Reflita:
 
 ### **5.1. Preparação do Cenário (Topologia)**
 Abra o Packet Tracer e adicione os seguintes dispositivos:
-* **Roteadores:** 2x Roteadores (Modelo 2911 ou similar).
-* **Switches:** 2x Switches (Modelo 2960).
-* **Computadores:** 2x PCs (um para cada lado).
+* **Roteadores:** 2x Roteadores (Modelo 1941 ou similar);
+* **Switches:** 2x Switches (Modelo 2960);
+* **Computadores:** 4x PCs (dois para cada lado);
+* **Impressora:** 1x Impressora (Modelo Printer-PT).
 
 **Conexões de Cabos:**
-1.  **PC para Switch:** Cabo Direto (Copper Straight-Through) na porta FastEthernet.
+1.  **PC e Impressora para Switch:** Cabo Direto (Copper Straight-Through) na porta FastEthernet.
 2.  **Switch para Roteador:** Cabo Direto conectando a porta **Gigabit 0/1** do Switch à porta **Gigabit 0/0** do Roteador.
 3.  **Roteador para Roteador:** Cabo Cruzado (**Copper Cross-over**) conectando as portas **Gigabit 0/1** de ambos os roteadores.
 
@@ -89,12 +90,13 @@ Abra o Packet Tracer e adicione os seguintes dispositivos:
 
 ### **5.2. Cálculo das Sub-redes**
 O instrutor utiliza a técnica do "salto" para definir as redes:
-* **Máscara Escolhida:** `255.255.255.192`
-* **Cálculo do Salto:** $256 - 192 = 64$.
+* **Máscara Escolhida:** `255.255.255.?`
+* **Cálculo do Salto:** $256 - ? = 64$.
 * **Sub-redes Criadas:**
     * **Sub-rede 1 (LAN Esquerda):** `192.168.0.0` (IPs válidos: `.1` a `.62`).
     * **Sub-rede 2 (Link Roteadores):** `192.168.0.64` (IPs válidos: `.65` a `.126`).
     * **Sub-rede 3 (LAN Direita):** `192.168.0.128` (IPs válidos: `.129` a `.190`).
+    * **Sub-rede 4 (LAN espansão):** `192.168.0.192` (IPs válidos: `.193` a `.254`).
 
 ---
 
