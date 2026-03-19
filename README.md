@@ -192,11 +192,15 @@ Para verificar se tudo deu certo:
 1.  Mude para o modo **Simulation** (canto inferior direito).
 2.  Clique no filtro **Edit Filters** e deixe marcado apenas o protocolo **ICMP**.
 3.  Use a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
-4.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-5.  Clique novamente em filtro **Edit Filters** e deixe marcado apenas o protocolo **TCP**.
-6.  Use novamente a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
-7.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-8.  Faça o mesmo para o protocolo UDP. 
+
+<img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/PDU.png" width="800">
+
+
+5.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
+6.  Clique novamente em filtro **Edit Filters** e deixe marcado apenas o protocolo **TCP**.
+7.  Use novamente a ferramenta de "cartinha" (Add Simple PDU) e clique primeiro no **PC 01** (esquerda) e depois no **PC 04** (direita).
+8.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
+9.  Faça o mesmo para o protocolo UDP. 
 
 ---
 
