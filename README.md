@@ -197,7 +197,9 @@ Para verificar se tudo deu certo:
 
 
 5.  Dê **Play** na simulação. Você verá o pacote indo até o destino e voltando com sucesso.
-6.  Vai clicando 
+6.  Vai clicando no avançar.
+
+<img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/simulacao.png" width="800">
 
 ### **Dica de Diagnóstico**
 É normal que o primeiro ping falhe no Packet Tracer (timeout). Se isso acontecer, apague o teste e tente novamente; na segunda vez, o pacote deve chegar ao destino sem problemas.
