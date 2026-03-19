@@ -52,10 +52,10 @@ Reflita:
 <img src="https://github.com/agodoi/m09ec-semana07/blob/main/assets/topologia-01d.png" width="800">
 
 ### 4.2 Lista de peças:
-* 02 Roteador: 1941
-* 02 Switch: 2960
-* 04 PC-PT
-* 01 Printer-PT
+* 02 Roteador: 1941;
+* 02 Switch: 2960;
+* 04 PC-PT: PC0 PC1 PC2 PC3;
+* 01 Printer-PT.
 
 ### 4.3 O que fazer dentro do Packet Tracer?
 
